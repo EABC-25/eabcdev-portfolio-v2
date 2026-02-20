@@ -1,5 +1,11 @@
 function Home() {
-  return <div className="flex-1 bg-emerald-600">HOME</div>;
+  return (
+    <div className="h-full flex-1 bg-emerald-600 border">
+      <div className="flex h-full w-full">
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      </div>
+    </div>
+  );
 }
 
 export default Home;
