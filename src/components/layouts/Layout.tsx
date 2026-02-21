@@ -15,19 +15,24 @@ function Layout() {
 
   return (
     <div className="h-full flex flex-col">
-      <header className="h-[8dvh] bg-blue-700">
-        <h1 className="h-full flex items-center">HEADER</h1>
+      <header>
+        <h1>H</h1>
+        <h1>E</h1>
+        <h1>A</h1>
+        <h1>D</h1>
+        <h1>E</h1>
+        <h1>R</h1>
       </header>
       <main className="relative flex flex-1 min-h-0 overflow-hidden bg-emerald-500">
         <section className="flex-1 max-w-[200px]">SECTION</section>
         <div
-          className={clsx("flex flex-1 h-full page-sidebar", {
+          className={clsx("flex flex-1 h-full page-content", {
             active: sidebarActive,
           })}
         >
           <button
             type="button"
-            className={clsx("sidebar-button", {
+            className={clsx("page-content-button", {
               active: sidebarActive,
             })}
             onClick={() => {
