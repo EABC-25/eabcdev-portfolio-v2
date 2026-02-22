@@ -16,15 +16,27 @@ function Layout() {
   return (
     <div className="h-full flex flex-col">
       <header>
-        <h1>H</h1>
-        <h1>E</h1>
-        <h1>A</h1>
-        <h1>D</h1>
-        <h1>E</h1>
-        <h1>R</h1>
+        <div className="header-container">
+          <div className="title-container">
+            <h1 className="title-letter">E</h1>
+            <h1 className="title-letter">A</h1>
+            <h1 className="title-letter">B</h1>
+            <h1 className="title-letter">C</h1>
+            <h1 className="title-letter">D</h1>
+            <h1 className="title-letter">E</h1>
+            <h1 className="title-letter">V</h1>
+          </div>
+          <div className="slider-relative">
+            <div className="slider-absolute">
+              <div className="slider-mark" />
+            </div>
+          </div>
+        </div>
       </header>
       <main className="relative flex flex-1 min-h-0 overflow-hidden bg-emerald-500">
-        <section className="flex-1 max-w-[200px]">SECTION</section>
+        <section className="flex-1 max-w-[200px]">
+          <h1>Section</h1>
+        </section>
         <div
           className={clsx("flex flex-1 h-full page-content", {
             active: sidebarActive,
