@@ -1,4 +1,5 @@
-import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import clsx from "clsx";
 import {
   FaLinkedin,
@@ -8,10 +9,13 @@ import {
   FaDownload,
 } from "react-icons/fa";
 
-import { useState } from "react";
+type SideContentPath = "/projects" | "/tools";
+
+const SIDECONTENT_PATHS: SideContentPath[] = ["/projects", "/tools"];
 
 function Layout() {
-  const [sidebarActive, setSidebarActive] = useState(false);
+  const location = useLocation();
+  const [sideActive, setSideActive] = useState(false);
 
   return (
     <div className="h-full flex flex-col">
@@ -37,21 +41,24 @@ function Layout() {
         <section className="flex-1 max-w-[200px]">
           <h1>Section</h1>
         </section>
+
+        {/* SideContent */}
+
         <div
           className={clsx("flex flex-1 h-full page-content", {
-            active: sidebarActive,
+            active: sideActive,
           })}
         >
           <button
             type="button"
             className={clsx("page-content-button", {
-              active: sidebarActive,
+              active: sideActive,
             })}
             onClick={() => {
-              setSidebarActive(!sidebarActive);
+              setSideActive(!sideActive);
             }}
           >
-            {sidebarActive ? <FaChevronRight /> : <FaChevronLeft />}
+            {sideActive ? <FaChevronRight /> : <FaChevronLeft />}
           </button>
           <Outlet />
         </div>
